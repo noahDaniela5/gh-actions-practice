@@ -1,0 +1,19 @@
+name: push workflow
+on: push
+jobs: 
+  lint-job:
+    runs-on: ubuntu latest
+    steps: 
+      - name: run lint 
+        run: npm run lint
+  test-job:
+    runs-on: ubuntu latest
+    steps:
+      - name: run tests
+        run: npm test
+  deploy-job:
+    needs: test-job
+    runs-on: ubuntu latest
+    steps:
+      - name: deploy page
+        run: echo "Deploying..."
