@@ -1,7 +1,7 @@
-name: push workflow
+name: Deployment excercise 1
 on: push
 jobs: 
-  deployment:
+  deploy:
     runs-on: ubuntu latest
     steps: 
       - name: get code
